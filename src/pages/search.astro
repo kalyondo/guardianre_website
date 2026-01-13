@@ -1,0 +1,260 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all searchable content for the search index
+const posts = await getCollection('posts');
+const pages = await getCollection('pages');
+
+// Create search index
+const searchIndex = [
+  ...posts.map((post) => ({
+    type: 'post',
+    title: post.data.title,
+    slug: post.slug,
+    url: `/blog/${post.slug}`,
+    excerpt: post.data.excerpt || '',
+    categories: post.data.categories || [],
+    tags: post.data.tags || [],
+    date: post.data.date,
+  })),
+  ...pages.map((page) => ({
+    type: 'page',
+    title: page.data.title,
+    slug: page.slug,
+    url: `/${page.slug}`,
+    excerpt: page.data.excerpt || '',
+    categories: [],
+    tags: [],
+    date: page.data.date,
+  })),
+];
+---
+
+<BaseLayout title="Search" description="Search Guardian Reinsurance Brokers Zambia website">
+  <section class="hero py-16">
+    <div class="container text-center">
+      <h1 class="text-4xl md:text-5xl font-bold font-display mb-6">Search</h1>
+      <div class="max-w-2xl mx-auto">
+        <div class="relative">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search posts, pages..."
+            class="w-full px-6 py-4 pl-14 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-guardian-gold focus:border-transparent text-lg"
+            autocomplete="off"
+          />
+          <svg class="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section py-12">
+    <div class="container max-w-4xl">
+      <!-- Results count -->
+      <p id="results-count" class="text-gray-600 dark:text-gray-400 mb-8 hidden">
+        <span id="count">0</span> results found
+      </p>
+
+      <!-- No query message -->
+      <div id="no-query" class="text-center py-16">
+        <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <p class="text-gray-600 dark:text-gray-400">Enter a search term to find content</p>
+      </div>
+
+      <!-- No results message -->
+      <div id="no-results" class="text-center py-16 hidden">
+        <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No results found</h2>
+        <p class="text-gray-600 dark:text-gray-400">Try different keywords or browse our categories</p>
+      </div>
+
+      <!-- Results list -->
+      <div id="results" class="space-y-6"></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- Pass search index to client -->
+<script define:vars={{ searchIndex }}>
+  window.searchIndex = searchIndex;
+</script>
+
+<script>
+  import Fuse from 'fuse.js';
+
+  // Escape HTML to prevent XSS
+  function escapeHtml(text: string): string {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.textContent || '';
+  }
+
+  function initSearch() {
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const resultsContainer = document.getElementById('results');
+    const resultsCount = document.getElementById('results-count');
+    const countSpan = document.getElementById('count');
+    const noQuery = document.getElementById('no-query');
+    const noResults = document.getElementById('no-results');
+
+    if (!searchInput || !resultsContainer || !resultsCount || !countSpan || !noQuery || !noResults) {
+      return;
+    }
+
+    // Get search index from window
+    const searchIndex = (window as any).searchIndex || [];
+
+    // Initialize Fuse.js
+    const fuse = new Fuse(searchIndex, {
+      keys: [
+        { name: 'title', weight: 0.4 },
+        { name: 'excerpt', weight: 0.3 },
+        { name: 'categories', weight: 0.15 },
+        { name: 'tags', weight: 0.15 },
+      ],
+      threshold: 0.4,
+      includeScore: true,
+      minMatchCharLength: 2,
+    });
+
+    // Create result element safely
+    function createResultElement(item: any): HTMLElement {
+      const article = document.createElement('article');
+      article.className = 'card p-6 hover:shadow-xl transition-shadow';
+
+      const link = document.createElement('a');
+      link.href = item.url;
+      link.className = 'block';
+
+      // Badge container
+      const badgeContainer = document.createElement('div');
+      badgeContainer.className = 'flex items-center gap-2 mb-2';
+
+      const badge = document.createElement('span');
+      badge.className = `badge-${item.type === 'post' ? 'primary' : 'gold'} text-xs`;
+      badge.textContent = item.type;
+      badgeContainer.appendChild(badge);
+
+      if (item.categories?.length > 0) {
+        item.categories.slice(0, 2).forEach((cat: string) => {
+          const catSpan = document.createElement('span');
+          catSpan.className = 'text-xs text-gray-500 dark:text-gray-400 capitalize';
+          catSpan.textContent = cat.replace(/-/g, ' ');
+          badgeContainer.appendChild(catSpan);
+        });
+      }
+
+      link.appendChild(badgeContainer);
+
+      // Title
+      const title = document.createElement('h2');
+      title.className = 'text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-guardian-primary dark:hover:text-guardian-accent transition-colors';
+      title.textContent = item.title;
+      link.appendChild(title);
+
+      // Excerpt
+      if (item.excerpt) {
+        const excerpt = document.createElement('p');
+        excerpt.className = 'text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-2';
+        excerpt.textContent = item.excerpt;
+        link.appendChild(excerpt);
+      }
+
+      // Date
+      if (item.date) {
+        const date = document.createElement('time');
+        date.className = 'text-sm text-gray-500 dark:text-gray-500';
+        date.textContent = new Date(item.date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        });
+        link.appendChild(date);
+      }
+
+      article.appendChild(link);
+      return article;
+    }
+
+    // Handle search
+    function performSearch(query: string) {
+      if (!query || query.length < 2) {
+        resultsContainer.replaceChildren();
+        resultsCount.classList.add('hidden');
+        noResults.classList.add('hidden');
+        noQuery.classList.remove('hidden');
+        return;
+      }
+
+      noQuery.classList.add('hidden');
+      const results = fuse.search(query);
+
+      if (results.length === 0) {
+        resultsContainer.replaceChildren();
+        resultsCount.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+      resultsCount.classList.remove('hidden');
+      countSpan.textContent = results.length.toString();
+
+      // Build results using safe DOM methods
+      const fragment = document.createDocumentFragment();
+      results.forEach(({ item }) => {
+        fragment.appendChild(createResultElement(item));
+      });
+
+      resultsContainer.replaceChildren(fragment);
+    }
+
+    // Debounce function
+    function debounce<T extends (...args: any[]) => void>(fn: T, delay: number): T {
+      let timeoutId: ReturnType<typeof setTimeout>;
+      return ((...args: Parameters<T>) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn(...args), delay);
+      }) as T;
+    }
+
+    // Listen for input
+    const debouncedSearch = debounce((e: Event) => {
+      const query = (e.target as HTMLInputElement).value.trim();
+      performSearch(query);
+    }, 200);
+
+    searchInput.addEventListener('input', debouncedSearch);
+
+    // Handle URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryParam = urlParams.get('q');
+    if (queryParam) {
+      searchInput.value = queryParam;
+      performSearch(queryParam);
+    }
+
+    // Focus input on load
+    searchInput.focus();
+  }
+
+  // Initialize on page load
+  document.addEventListener('astro:page-load', initSearch);
+</script>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

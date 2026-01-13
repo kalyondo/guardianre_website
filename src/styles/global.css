@@ -1,0 +1,336 @@
+/* Guardian Re Brand Typography */
+/* Georgia (serif) for headings - system font, no import needed */
+/* Raleway (sans-serif) as Brandon Grotesque alternative for body text */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased text-gray-900 bg-white dark:bg-gray-950 dark:text-gray-100;
+  }
+
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-guardian-green text-white hover:bg-guardian-green-dark focus:ring-guardian-green;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-guardian-green border-2 border-guardian-green hover:bg-guardian-green hover:text-white focus:ring-guardian-green;
+  }
+
+  .btn-accent {
+    @apply btn bg-guardian-gold text-guardian-black hover:bg-guardian-gold-dark focus:ring-guardian-gold;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+  }
+
+  .card-bordered {
+    @apply card border border-gray-200 dark:border-gray-800;
+  }
+
+  /* Section styling */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold font-display text-gray-900 dark:text-white mb-4;
+  }
+
+  .section-subheading {
+    @apply text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300;
+  }
+
+  .badge-gold {
+    @apply badge bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-guardian-green dark:hover:text-guardian-gold font-medium transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-guardian-green dark:text-guardian-gold font-semibold;
+  }
+
+  /* Form elements */
+  .input {
+    @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-guardian-green focus:border-transparent transition-all duration-200;
+  }
+
+  .input-error {
+    @apply border-red-500 focus:ring-red-500;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+  }
+
+  /* Stats */
+  .stat-item {
+    @apply text-center p-6;
+  }
+
+  .stat-value {
+    @apply block text-4xl md:text-5xl font-bold text-guardian-green dark:text-guardian-gold;
+  }
+
+  .stat-label {
+    @apply block text-sm text-gray-600 dark:text-gray-400 mt-2;
+  }
+
+  /* Hero sections */
+  .hero {
+    @apply relative py-20 md:py-32 bg-gradient-to-br from-guardian-green to-guardian-green-dark text-white;
+  }
+
+  .hero-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Content styling */
+  .content-section {
+    @apply mb-8;
+  }
+
+  .content-group {
+    @apply space-y-4;
+  }
+
+  .columns {
+    @apply grid md:grid-cols-2 gap-6;
+  }
+
+  .column {
+    @apply space-y-4;
+  }
+
+  /* Accordion */
+  .accordion {
+    @apply space-y-4;
+  }
+
+  .accordion-item {
+    @apply border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden;
+  }
+
+  .accordion-title {
+    @apply px-4 py-3 bg-gray-50 dark:bg-gray-900 font-semibold cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+
+  .accordion-content {
+    @apply px-4 py-4;
+  }
+
+  /* Gallery */
+  .gallery {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+  }
+
+  /* Icon box */
+  .icon-box {
+    @apply p-6 text-center bg-gray-50 dark:bg-gray-900 rounded-xl;
+  }
+
+  .icon-box h3 {
+    @apply text-lg font-semibold text-gray-900 dark:text-white;
+  }
+
+  /* Spacer */
+  .spacer {
+    @apply h-8 md:h-12;
+  }
+
+  /* Divider */
+  .section-divider {
+    @apply my-8 border-gray-200 dark:border-gray-800;
+  }
+
+  /* Video embed */
+  .video-embed {
+    @apply aspect-video bg-gray-100 dark:bg-gray-900 rounded-xl flex items-center justify-center;
+  }
+
+  /* Contact form placeholder */
+  .contact-form-placeholder {
+    @apply p-8 bg-gray-50 dark:bg-gray-900 rounded-xl text-center text-gray-600 dark:text-gray-400 border-2 border-dashed border-gray-300 dark:border-gray-700;
+  }
+
+  /* WP Figure */
+  .wp-image {
+    @apply my-6;
+  }
+
+  .wp-image img {
+    @apply rounded-lg shadow-lg w-full h-auto;
+  }
+
+  /* Tabs */
+  .tabs {
+    @apply space-y-4;
+  }
+
+  /* Embed */
+  .embed {
+    @apply my-6 aspect-video bg-gray-100 dark:bg-gray-900 rounded-xl;
+  }
+}
+
+@layer utilities {
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animate on scroll */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .animate-on-scroll.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-guardian-green to-guardian-gold;
+  }
+}
+
+/* Prose styling for MDX content */
+.prose {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold font-display text-gray-900 dark:text-white mb-6;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold font-display text-gray-900 dark:text-white mt-12 mb-4;
+}
+
+.prose h3 {
+  @apply text-2xl font-semibold text-gray-900 dark:text-white mt-8 mb-3;
+}
+
+.prose h4 {
+  @apply text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul, .prose ol {
+  @apply mb-4 pl-6;
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose a {
+  @apply text-guardian-green dark:text-guardian-gold hover:underline;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-guardian-green pl-4 italic text-gray-600 dark:text-gray-400 my-6;
+}
+
+.prose img {
+  @apply rounded-lg shadow-lg my-6;
+}
+
+.prose pre {
+  @apply bg-gray-900 rounded-lg p-4 overflow-x-auto my-6;
+}
+
+.prose code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose table {
+  @apply w-full my-6 border-collapse;
+}
+
+.prose th, .prose td {
+  @apply border border-gray-200 dark:border-gray-800 px-4 py-2;
+}
+
+.prose th {
+  @apply bg-gray-50 dark:bg-gray-900 font-semibold text-left;
+}
+
+/* Dark mode transitions */
+.dark-mode-transition {
+  @apply transition-colors duration-300;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    @apply text-black bg-white;
+  }
+
+  .prose {
+    @apply text-black;
+  }
+}

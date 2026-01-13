@@ -1,0 +1,360 @@
+{
+  "category": [
+    {
+      "id": 2,
+      "name": "Business plans",
+      "slug": "business-plans",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    },
+    {
+      "id": 3,
+      "name": "Competitive research",
+      "slug": "competitive-research-analysis",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 4,
+      "name": "Economics",
+      "slug": "economics",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 5,
+      "name": "Finance &amp; accounting",
+      "slug": "finance-accounting",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 6,
+      "name": "Franchising",
+      "slug": "franchising",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    },
+    {
+      "id": 7,
+      "name": "Funding trends",
+      "slug": "funding-trends",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 8,
+      "name": "Innovation",
+      "slug": "innovation",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 9,
+      "name": "International",
+      "slug": "international",
+      "description": "",
+      "count": 0,
+      "parentId": 0
+    },
+    {
+      "id": 1,
+      "name": "Uncategorized",
+      "slug": "uncategorized",
+      "description": "",
+      "count": 9,
+      "parentId": 0
+    }
+  ],
+  "elementor_library_type": [
+    {
+      "id": 43,
+      "name": "page",
+      "slug": "page",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    }
+  ],
+  "nav_menu": [
+    {
+      "id": 38,
+      "name": "GuardianRe",
+      "slug": "guardianre",
+      "description": "",
+      "count": 5,
+      "parentId": 0
+    },
+    {
+      "id": 39,
+      "name": "Main Menu",
+      "slug": "main-menu",
+      "description": "",
+      "count": 65,
+      "parentId": 0
+    },
+    {
+      "id": 40,
+      "name": "Sidebar Menu 1",
+      "slug": "sidebar-menu-1",
+      "description": "",
+      "count": 7,
+      "parentId": 0
+    },
+    {
+      "id": 41,
+      "name": "Sidebar Menu 2",
+      "slug": "sidebar-menu-2",
+      "description": "",
+      "count": 6,
+      "parentId": 0
+    },
+    {
+      "id": 42,
+      "name": "Sidebar Menu 3",
+      "slug": "sidebar-menu-3",
+      "description": "",
+      "count": 6,
+      "parentId": 0
+    }
+  ],
+  "post_tag": [
+    {
+      "id": 10,
+      "name": "401K",
+      "slug": "401k",
+      "description": "",
+      "count": 3,
+      "parentId": 0
+    },
+    {
+      "id": 11,
+      "name": "advisors",
+      "slug": "advisors",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 12,
+      "name": "benchmarks",
+      "slug": "benchmarks",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 13,
+      "name": "consulting",
+      "slug": "consulting",
+      "description": "",
+      "count": 4,
+      "parentId": 0
+    },
+    {
+      "id": 14,
+      "name": "finance",
+      "slug": "finance",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    },
+    {
+      "id": 15,
+      "name": "ideas",
+      "slug": "ideas",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 16,
+      "name": "inventors",
+      "slug": "inventors",
+      "description": "",
+      "count": 0,
+      "parentId": 0
+    },
+    {
+      "id": 17,
+      "name": "market",
+      "slug": "market",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    },
+    {
+      "id": 18,
+      "name": "millenials",
+      "slug": "millenials",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 19,
+      "name": "online services",
+      "slug": "online-services",
+      "description": "",
+      "count": 5,
+      "parentId": 0
+    },
+    {
+      "id": 20,
+      "name": "performance",
+      "slug": "performance",
+      "description": "",
+      "count": 0,
+      "parentId": 0
+    },
+    {
+      "id": 21,
+      "name": "personal finance",
+      "slug": "personal-finance",
+      "description": "",
+      "count": 0,
+      "parentId": 0
+    },
+    {
+      "id": 22,
+      "name": "planning",
+      "slug": "planning",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    },
+    {
+      "id": 23,
+      "name": "portfolios",
+      "slug": "portfolios",
+      "description": "",
+      "count": 5,
+      "parentId": 0
+    },
+    {
+      "id": 24,
+      "name": "themeforest",
+      "slug": "themeforest",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    },
+    {
+      "id": 25,
+      "name": "tips",
+      "slug": "tips",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 26,
+      "name": "wealth",
+      "slug": "wealth",
+      "description": "",
+      "count": 0,
+      "parentId": 0
+    }
+  ],
+  "stm_portfolio_category": [
+    {
+      "id": 27,
+      "name": "Advanced Analytics",
+      "slug": "advanced-analytics",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    },
+    {
+      "id": 33,
+      "name": "Financial Services",
+      "slug": "financial-services",
+      "description": "",
+      "count": 3,
+      "parentId": 0
+    },
+    {
+      "id": 36,
+      "name": "Surface Transport &amp; Logistics",
+      "slug": "surface-transport-logistics",
+      "description": "",
+      "count": 3,
+      "parentId": 0
+    }
+  ],
+  "stm_testimonials_category": [
+    {
+      "id": 28,
+      "name": "Base",
+      "slug": "base",
+      "description": "",
+      "count": 0,
+      "parentId": 0
+    },
+    {
+      "id": 34,
+      "name": "Secondary",
+      "slug": "secondary",
+      "description": "",
+      "count": 0,
+      "parentId": 0
+    }
+  ],
+  "stm_works_category": [
+    {
+      "id": 29,
+      "name": "Business Services",
+      "slug": "business-services",
+      "description": "",
+      "count": 5,
+      "parentId": 0
+    },
+    {
+      "id": 30,
+      "name": "Consumer Products",
+      "slug": "consumer-products",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 31,
+      "name": "Energy &amp; Environment",
+      "slug": "energy-environment",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 32,
+      "name": "Financial Services",
+      "slug": "financial-services",
+      "description": "",
+      "count": 1,
+      "parentId": 0
+    },
+    {
+      "id": 35,
+      "name": "Surface Transport &amp; Logistics",
+      "slug": "surface-transport-logistics",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    },
+    {
+      "id": 37,
+      "name": "Travel &amp; Aviation",
+      "slug": "travel-aviation",
+      "description": "",
+      "count": 2,
+      "parentId": 0
+    }
+  ]
+}

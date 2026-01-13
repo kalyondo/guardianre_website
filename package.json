@@ -1,0 +1,32 @@
+{
+  "name": "guardian-reinsurance-site",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Guardian Reinsurance Brokers Zambia - Reconstructed Static Site",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "discover": "python3 scripts/wp_discover.py",
+    "export": "python3 scripts/wp_export.py",
+    "transform": "python3 scripts/wp_transform.py",
+    "prepare-content": "npm run export && npm run transform"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.0",
+    "@astrojs/sitemap": "^3.1.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/rss": "^4.0.5",
+    "astro": "^4.8.0",
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "fuse.js": "^7.0.0",
+    "clsx": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}

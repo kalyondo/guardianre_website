@@ -1,0 +1,52 @@
+---
+// Guardian Reinsurance Logo - African Fish Eagle with Sun Rays
+// Uses the official logo image
+
+interface Props {
+  class?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'hero';
+  variant?: 'full' | 'compact' | 'icon';
+  showPartner?: boolean;
+}
+
+const { class: className = '', size = 'md', variant = 'full', showPartner = false } = Astro.props;
+
+const sizes = {
+  sm: { height: 'h-10', text: 'text-sm' },
+  md: { height: 'h-14', text: 'text-base' },
+  lg: { height: 'h-20', text: 'text-lg' },
+  xl: { height: 'h-28', text: 'text-xl' },
+  hero: { height: 'h-40', text: 'text-2xl' },
+};
+
+const currentSize = sizes[size];
+---
+
+<div class={`flex items-center ${className}`}>
+  {variant === 'icon' ? (
+    <!-- Icon only - just the eagle portion -->
+    <img
+      src="/images/guardian-logo.jpg"
+      alt="Guardian Re"
+      class={`${currentSize.height} w-auto object-contain`}
+    />
+  ) : variant === 'compact' ? (
+    <!-- Compact - logo with text side by side -->
+    <div class="flex items-center gap-3">
+      <img
+        src="/images/guardian-logo.jpg"
+        alt="Guardian Reinsurance Brokers"
+        class={`${currentSize.height} w-auto object-contain`}
+      />
+    </div>
+  ) : (
+    <!-- Full variant - complete logo -->
+    <div class="flex flex-col items-center">
+      <img
+        src="/images/guardian-logo.jpg"
+        alt="Guardian Reinsurance Brokers (Z) Limited - In Association with Minerva Re"
+        class={`${currentSize.height} w-auto object-contain`}
+      />
+    </div>
+  )}
+</div>

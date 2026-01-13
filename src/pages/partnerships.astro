@@ -1,0 +1,418 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Partnership benefits
+const partnershipBenefits = [
+  {
+    number: '01',
+    title: '70+ Years Combined Experience',
+    description: 'Benefits emanating from over 70 years of combined reinsurance broking experience through our strategic partnerships, spanning multiple market cycles and regulatory environments.'
+  },
+  {
+    number: '02',
+    title: 'Global Market Access',
+    description: 'Access to global reinsurance markets through our network in leading global centres, enabling competitive terms and diversified capacity for complex risks.'
+  },
+  {
+    number: '03',
+    title: 'Cutting-Edge Analytical Tools',
+    description: 'Access to advanced reinsurance modelling tools enabling sophisticated catastrophe modelling, portfolio optimisation, and data-driven decision support.'
+  },
+  {
+    number: '04',
+    title: 'Specialist Technical Resources',
+    description: 'Access to specialist resources including qualified Actuaries, Life & Health experts, Risk Engineers, and Agricultural specialists.'
+  },
+  {
+    number: '05',
+    title: 'Integrated Business Intelligence',
+    description: 'Robust and integrated broking systems with business intelligence tools to produce meaningful data for reinsurance optimisation and strategic planning.'
+  },
+];
+
+// Technical resources
+const technicalResources = [
+  {
+    title: 'Actuarial Services',
+    description: 'Qualified actuaries provide analytical support for pricing, reserving, and portfolio analysis.',
+    icon: 'calculator'
+  },
+  {
+    title: 'Life & Health Expertise',
+    description: 'Specialists in mortality, morbidity, and long-term risk assessment support our life and health practice.',
+    icon: 'heart'
+  },
+  {
+    title: 'Engineering Services',
+    description: 'Risk engineers with technical backgrounds provide loss prevention advice and risk assessment.',
+    icon: 'cog'
+  },
+  {
+    title: 'Agronomy Services',
+    description: 'Agricultural specialists support crop insurance and agribusiness placements with technical input.',
+    icon: 'leaf'
+  },
+];
+
+// Partnership principles
+const principles = [
+  { title: 'Alignment of Interests', description: 'We partner with organisations that share our commitment to client service and professional integrity.' },
+  { title: 'Complementary Capability', description: 'Partnerships are structured to enhance our service offering without creating conflicts or dependencies.' },
+  { title: 'Mutual Benefit', description: 'Successful partnerships create value for all parties, including most importantly our clients.' },
+  { title: 'Long-term Orientation', description: 'We invest in relationships built for sustained collaboration rather than transactional convenience.' },
+];
+
+// Client impact items
+const clientImpacts = [
+  'Access to broader market capacity and competitive terms',
+  'Technical support that enhances programme design and risk selection',
+  'Analytical tools that improve decision-making quality',
+  'Operational efficiency through integrated systems and processes',
+  'Specialist expertise for complex or technical placements',
+];
+---
+
+<BaseLayout title="Strategic Partnerships | Guardian Reinsurance Brokers">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-guardian-green via-guardian-green-dark to-guardian-black py-16 md:py-28 overflow-hidden px-4 md:px-0">
+    <!-- Decorative sun rays -->
+    <div class="absolute top-0 right-0 w-96 h-96 opacity-10">
+      <svg viewBox="0 0 200 200" class="w-full h-full">
+        {[...Array(16)].map((_, i) => (
+          <line
+            x1="100"
+            y1="100"
+            x2={100 + 100 * Math.cos((i * 22.5) * Math.PI / 180)}
+            y2={100 + 100 * Math.sin((i * 22.5) * Math.PI / 180)}
+            stroke="#CBA875"
+            stroke-width="2"
+          />
+        ))}
+        <circle cx="100" cy="100" r="30" fill="#CBA875" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-base text-white mb-6 backdrop-blur-sm">
+          <span class="w-2 h-2 bg-guardian-gold rounded-full animate-pulse"></span>
+          Global Reach, Local Expertise
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
+          Strategic <span class="text-guardian-gold">Partnerships</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
+          Extending our capabilities and enhancing the value we deliver through relationships built on shared professional values and mutual commitment to excellence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership Value Intro -->
+  <section class="section bg-white px-4 md:px-0">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Guardian Re has established strategic partnerships that extend our capabilities and enhance the value we deliver to clients. These relationships are built on shared professional values, complementary expertise, and a mutual commitment to service excellence.
+        </p>
+        <p class="text-base text-gray-600 leading-relaxed mb-8">
+          Our partnership approach enables us to offer clients access to global reinsurance markets, specialist technical resources, and advanced analytical tools that would otherwise be beyond the reach of a regional broker.
+        </p>
+
+        <!-- Experience Callout -->
+        <div class="inline-flex items-center gap-3 px-5 sm:px-6 py-4 bg-guardian-gold/10 rounded-full">
+          <div class="w-10 h-10 bg-guardian-gold rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5 text-guardian-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <span class="text-base sm:text-lg font-semibold text-gray-900">70+ Years Combined Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership Benefits Grid -->
+  <section class="section bg-gray-50 px-4 md:px-0">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 bg-guardian-green/10 text-guardian-green text-base font-semibold rounded-full mb-4">Partnership Value</span>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+          The Benefits We Bring
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Our partnerships translate into tangible benefits for the insurers we serve.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        {partnershipBenefits.map((benefit) => (
+          <div class="bg-white rounded-2xl p-5 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-guardian-gold">
+            <div class="w-10 h-10 bg-guardian-gold/20 rounded-lg flex items-center justify-center text-guardian-gold font-bold mb-4">
+              {benefit.number}
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">{benefit.title}</h3>
+            <p class="text-base text-gray-600 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Resources -->
+  <section class="section bg-white px-4 md:px-0">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 bg-guardian-gold/10 text-guardian-gold text-base font-semibold rounded-full mb-4">Specialist Capabilities</span>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+          Technical Resources
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Our partnerships provide access to specialist resources that support comprehensive client service.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-5xl mx-auto">
+        {technicalResources.map((resource) => (
+          <div class="text-center p-4 sm:p-6">
+            <div class="w-14 sm:w-16 h-14 sm:h-16 mx-auto mb-4 bg-guardian-green/10 rounded-2xl flex items-center justify-center">
+              {resource.icon === 'calculator' && (
+                <svg class="w-8 h-8 text-guardian-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+              )}
+              {resource.icon === 'heart' && (
+                <svg class="w-8 h-8 text-guardian-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+              )}
+              {resource.icon === 'cog' && (
+                <svg class="w-8 h-8 text-guardian-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              )}
+              {resource.icon === 'leaf' && (
+                <svg class="w-8 h-8 text-guardian-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2">{resource.title}</h3>
+            <p class="text-sm text-gray-600">{resource.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Minerva Re Partnership Feature -->
+  <section class="section bg-guardian-cream px-4 md:px-0">
+    <div class="container">
+      <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+        <!-- Logo Area -->
+        <div class="lg:col-span-2 flex flex-col items-center">
+          <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
+            <img
+              src="/images/guardian-logo.jpg"
+              alt="Guardian Reinsurance Brokers - In Association with Minerva Re"
+              class="h-24 sm:h-32 w-auto object-contain"
+            />
+          </div>
+          <p class="mt-4 text-center text-base text-gray-500">Endorsed Broking Partner</p>
+        </div>
+
+        <!-- Content Area -->
+        <div class="lg:col-span-3">
+          <span class="inline-block px-4 py-1.5 bg-guardian-green/10 text-guardian-green text-base font-semibold rounded-full mb-4">Primary Partnership</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
+            <a href="https://www.minerva.co.zw/" target="_blank" rel="noopener noreferrer" class="hover:text-guardian-gold transition-colors">Minerva Re</a> Partnership
+          </h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            Guardian Re is proud to serve as an endorsed reinsurance broking partner of <a href="https://www.minerva.co.zw/" target="_blank" rel="noopener noreferrer" class="text-guardian-gold font-semibold hover:underline">Minerva Re</a>. This relationship provides our clients with access to Minerva Re's global network, technical expertise, and market relationships.
+          </p>
+          <p class="text-base text-gray-600 mb-6 leading-relaxed">
+            The partnership enhances our ability to serve clients with complex requirements, large capacity needs, or specialist risk transfer challenges.
+          </p>
+
+          <!-- Benefits List -->
+          <div class="space-y-3 mt-8">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-guardian-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-base text-gray-600">Access to global reinsurance network</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-guardian-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-base text-gray-600">Technical expertise and market intelligence</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-guardian-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-base text-gray-600">Enhanced capacity for complex placements</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-guardian-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-base text-gray-600">Shared commitment to service excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced Analytics & Systems -->
+  <section class="section bg-white px-4 md:px-0">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-4 sm:gap-8 max-w-5xl mx-auto">
+        <!-- Analytics Card -->
+        <div class="bg-gray-50 rounded-2xl p-5 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-guardian-green/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-guardian-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Advanced Analytics</h3>
+          </div>
+          <p class="text-gray-600 mb-4 text-base leading-relaxed">
+            Our partners provide access to advanced reinsurance modelling tools and business intelligence platforms.
+          </p>
+          <ul class="mt-4 space-y-2 text-base text-gray-600">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-guardian-gold rounded-full"></span>
+              Sophisticated catastrophe modelling
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-guardian-gold rounded-full"></span>
+              Portfolio optimisation and scenario testing
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-guardian-gold rounded-full"></span>
+              Loss projection and pricing validation
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-guardian-gold rounded-full"></span>
+              Data-driven decision support
+            </li>
+          </ul>
+        </div>
+
+        <!-- Systems Card -->
+        <div class="bg-gray-50 rounded-2xl p-5 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-guardian-gold/10 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-guardian-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+              </svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Integrated Systems</h3>
+          </div>
+          <p class="text-gray-600 mb-4 text-base leading-relaxed">
+            Guardian Re utilises an integrated broking platform with advanced business intelligence capabilities.
+          </p>
+          <ul class="mt-4 space-y-2 text-base text-gray-600">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-guardian-gold rounded-full"></span>
+              Efficient programme administration
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-guardian-gold rounded-full"></span>
+              Accurate and timely reporting
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-guardian-gold rounded-full"></span>
+              Comprehensive data management
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-guardian-gold rounded-full"></span>
+              Meaningful management information
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership Principles -->
+  <section class="section bg-guardian-green text-white px-4 md:px-0">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 bg-white/10 text-guardian-gold text-base font-semibold rounded-full mb-4">Our Approach</span>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+          Partnership Principles
+        </h2>
+        <p class="text-lg text-white/90 max-w-2xl mx-auto">
+          Our approach to partnerships is guided by clear principles.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        {principles.map((principle) => (
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6">
+            <h3 class="text-base sm:text-lg font-semibold text-white mb-2">{principle.title}</h3>
+            <p class="text-sm text-white/80">{principle.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Impact Summary -->
+  <section class="section bg-gray-50 px-4 md:px-0">
+    <div class="container">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="inline-block px-4 py-1.5 bg-guardian-green/10 text-guardian-green text-base font-semibold rounded-full mb-4">Delivered Value</span>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+            Client Impact
+          </h2>
+          <p class="text-base text-gray-600">
+            The practical impact of our partnerships for clients includes:
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {clientImpacts.map((impact) => (
+            <div class="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
+              <div class="w-8 h-8 bg-guardian-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-guardian-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <span class="text-base text-gray-700">{impact}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="section bg-white px-4 md:px-0">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-4">
+          Explore Partnership Benefits
+        </h2>
+        <p class="text-base text-gray-600 mb-8">
+          To learn more about how our partnerships can benefit your organisation, please contact Guardian Re.
+        </p>
+        <a href="/contact" class="btn bg-guardian-green text-white hover:bg-guardian-green-dark px-8 py-4 text-base sm:text-lg font-semibold rounded-xl inline-flex items-center justify-center min-h-[52px]">
+          Contact Us
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

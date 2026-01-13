@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lastUpdated = 'January 2025';
+---
+
+<BaseLayout title="Terms of Service | Guardian Reinsurance Brokers">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-guardian-green via-guardian-green-dark to-guardian-black py-16 md:py-20 overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 opacity-10">
+      <svg viewBox="0 0 200 200" class="w-full h-full">
+        {[...Array(16)].map((_, i) => (
+          <line
+            x1="100"
+            y1="100"
+            x2={100 + 100 * Math.cos((i * 22.5) * Math.PI / 180)}
+            y2={100 + 100 * Math.sin((i * 22.5) * Math.PI / 180)}
+            stroke="#CBA875"
+            stroke-width="2"
+          />
+        ))}
+        <circle cx="100" cy="100" r="30" fill="#CBA875" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl">
+        <span class="inline-block px-4 py-1.5 bg-guardian-gold/20 text-guardian-gold text-sm font-semibold rounded-full mb-4">
+          Legal
+        </span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+          Terms of Service
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80">
+          Terms and conditions governing our services and your use of this website
+        </p>
+        <p class="text-sm text-white/60 mt-4">Last updated: {lastUpdated}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="section bg-white px-4 md:px-0">
+    <div class="container">
+      <div class="max-w-4xl mx-auto prose prose-lg prose-gray">
+        
+        <div class="bg-guardian-green/5 border-l-4 border-guardian-green p-6 rounded-r-lg mb-8">
+          <p class="text-gray-700 m-0">
+            Please read these Terms of Service carefully before using our website or engaging our services. By accessing this website or using our services, you agree to be bound by these terms. If you do not agree to these terms, please do not use our website or services.
+          </p>
+        </div>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">1. About Guardian Reinsurance Brokers</h2>
+        <p class="text-gray-600">Guardian Reinsurance Brokers (Zambia) Limited ("Guardian Re", "we", "us", or "our") is a licensed reinsurance broker registered in the Republic of Zambia and regulated by the Pensions and Insurance Authority (PIA). We are an endorsed broking partner of Minerva Re, providing professional reinsurance broking services to insurance companies operating in Zambia and the broader African market.</p>
+        
+        <div class="bg-guardian-gold/10 p-4 rounded-lg mt-4">
+          <p class="text-gray-700 m-0 text-sm"><strong>Registration:</strong> Guardian Reinsurance Brokers (Zambia) Limited is licensed and regulated by the Pensions and Insurance Authority (PIA) of Zambia.</p>
+        </div>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">2. Services</h2>
+        <p class="text-gray-600 mb-4">Guardian Re provides the following reinsurance broking services:</p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+          <li><strong>Treaty Reinsurance:</strong> Arrangement of proportional and non-proportional treaty programs</li>
+          <li><strong>Facultative Reinsurance:</strong> Placement of individual risks with reinsurers</li>
+          <li><strong>Risk Assessment:</strong> Comprehensive analysis and evaluation of risks</li>
+          <li><strong>Claims Management:</strong> Assistance with reinsurance claims handling</li>
+          <li><strong>Technical Advisory:</strong> Expert guidance on reinsurance structures and pricing</li>
+          <li><strong>Market Access:</strong> Connection to international reinsurance markets</li>
+        </ul>
+        <p class="text-gray-600 mt-4">Our services are provided exclusively to insurance companies, not to individual consumers. We act as intermediaries between cedants (insurance companies) and reinsurers.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">3. Website Use</h2>
+        
+        <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Permitted Use</h3>
+        <p class="text-gray-600 mb-4">You may use this website for lawful purposes only. You agree not to:</p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+          <li>Use the website in any way that violates applicable laws or regulations</li>
+          <li>Attempt to gain unauthorized access to our systems or networks</li>
+          <li>Transmit any malicious code, viruses, or harmful data</li>
+          <li>Interfere with the proper functioning of the website</li>
+          <li>Copy, reproduce, or distribute website content without permission</li>
+          <li>Use automated tools to scrape or extract data from the website</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Intellectual Property</h3>
+        <p class="text-gray-600">All content on this website, including text, graphics, logos, images, and software, is the property of Guardian Reinsurance Brokers or its licensors and is protected by copyright, trademark, and other intellectual property laws. The Guardian Re logo and brand elements are registered trademarks.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">4. Professional Standards</h2>
+        <p class="text-gray-600 mb-4">In providing our services, we commit to:</p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+          <li>Acting with integrity, honesty, and professionalism</li>
+          <li>Maintaining confidentiality of client information</li>
+          <li>Providing accurate and timely advice</li>
+          <li>Disclosing any potential conflicts of interest</li>
+          <li>Complying with all applicable laws and PIA regulations</li>
+          <li>Maintaining appropriate professional indemnity insurance</li>
+        </ul>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">5. Client Obligations</h2>
+        <p class="text-gray-600 mb-4">When engaging our services, clients agree to:</p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+          <li>Provide accurate, complete, and timely information</li>
+          <li>Disclose all material facts relevant to the risks being reinsured</li>
+          <li>Pay agreed fees and premiums within specified timeframes</li>
+          <li>Notify us promptly of any claims or circumstances that may give rise to claims</li>
+          <li>Comply with policy terms and conditions</li>
+          <li>Maintain appropriate records and documentation</li>
+        </ul>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">6. Fees and Payment</h2>
+        <p class="text-gray-600 mb-4">Our remuneration is typically through brokerage commission paid by reinsurers. Additional fees may apply for:</p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+          <li>Specialized consulting services</li>
+          <li>Claims handling services</li>
+          <li>Technical studies and reports</li>
+        </ul>
+        <p class="text-gray-600 mt-4">All fees will be disclosed and agreed upon before services are rendered. Payment terms are specified in individual service agreements.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">7. Limitation of Liability</h2>
+        <p class="text-gray-600 mb-4">To the maximum extent permitted by law:</p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+          <li>We provide this website "as is" without warranties of any kind</li>
+          <li>We do not guarantee uninterrupted or error-free website access</li>
+          <li>We are not liable for any indirect, consequential, or incidental damages</li>
+          <li>Our liability for professional services is limited to the terms of our professional indemnity insurance and individual service agreements</li>
+          <li>We are not responsible for the acts or omissions of reinsurers or other third parties</li>
+        </ul>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">8. Indemnification</h2>
+        <p class="text-gray-600">You agree to indemnify and hold harmless Guardian Reinsurance Brokers, its directors, employees, and agents from any claims, damages, losses, or expenses arising from your breach of these Terms, your use of our website, or your violation of any third-party rights.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">9. Confidentiality</h2>
+        <p class="text-gray-600">We maintain strict confidentiality regarding all client information and business dealings. Information shared with us will only be disclosed to reinsurers and other parties as necessary to provide our services, or as required by law or regulatory authorities.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">10. Dispute Resolution</h2>
+        <p class="text-gray-600 mb-4">Any disputes arising from these Terms or our services shall be resolved as follows:</p>
+        <ol class="list-decimal pl-6 text-gray-600 space-y-2">
+          <li><strong>Negotiation:</strong> Parties shall first attempt to resolve disputes through good-faith negotiation</li>
+          <li><strong>Mediation:</strong> If negotiation fails, disputes may be referred to mediation</li>
+          <li><strong>Arbitration:</strong> Unresolved disputes shall be submitted to arbitration in Lusaka, Zambia, in accordance with the Arbitration Act of Zambia</li>
+        </ol>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">11. Governing Law</h2>
+        <p class="text-gray-600">These Terms of Service are governed by and construed in accordance with the laws of the Republic of Zambia. You agree to submit to the exclusive jurisdiction of the courts of Zambia for any legal proceedings.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">12. Regulatory Compliance</h2>
+        <p class="text-gray-600">Guardian Reinsurance Brokers operates under the supervision of the Pensions and Insurance Authority (PIA) of Zambia. Our services comply with:</p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+          <li>The Insurance Act of Zambia</li>
+          <li>PIA Guidelines for Reinsurance Brokers</li>
+          <li>Anti-Money Laundering regulations</li>
+          <li>Data Protection Act of Zambia</li>
+        </ul>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">13. Amendments</h2>
+        <p class="text-gray-600">We reserve the right to modify these Terms of Service at any time. Changes will be effective upon posting to our website. Your continued use of our website or services after changes are posted constitutes acceptance of the modified terms.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">14. Severability</h2>
+        <p class="text-gray-600">If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">15. Contact Information</h2>
+        <p class="text-gray-600 mb-4">For questions about these Terms of Service, please contact us:</p>
+        
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <p class="text-gray-700 font-semibold mb-2">Guardian Reinsurance Brokers (Zambia) Limited</p>
+          <p class="text-gray-600 mb-1">Plot 4162, Alex Masala Close</p>
+          <p class="text-gray-600 mb-1">Off Chaholi Road, Rhodes Park</p>
+          <p class="text-gray-600 mb-3">Lusaka, Zambia</p>
+          <p class="text-gray-600 mb-1"><strong>Email:</strong> info@guardianreinsurance.co.zm</p>
+          <p class="text-gray-600 mb-1"><strong>Phone:</strong> +260 211 258 883</p>
+        </div>
+
+        <div class="mt-8 p-6 bg-guardian-green/5 rounded-xl">
+          <p class="text-gray-600 text-sm m-0">
+            <strong>Acknowledgment:</strong> By using our website or engaging our services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

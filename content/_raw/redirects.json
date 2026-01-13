@@ -1,0 +1,62 @@
+[
+  {
+    "from": "/2024/01/15/hello-world/",
+    "to": "/blog/hello-world",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/30/harvest-great-ideas-from-your-companys-best-assets/",
+    "to": "/blog/harvest-great-ideas-from-your-companys-best-assets",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/30/three-social-media-hacks-for-the-busy-entrepreneur/",
+    "to": "/blog/three-social-media-hacks-for-the-busy-entrepreneur",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/30/stick-with-your-concept-but-do-your-homework/",
+    "to": "/blog/stick-with-your-concept-but-do-your-homework",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/30/seven-weeks-working-pro-bono-with-a-national-charity/",
+    "to": "/blog/seven-weeks-working-pro-bono-with-a-national-charity",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/30/retail-banks-wake-up-to-digital-lending/",
+    "to": "/blog/retail-banks-wake-up-to-digital-lending",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/30/a-digital-prescription-for-the-pharma-industry/",
+    "to": "/blog/a-digital-prescription-for-the-pharma-industry",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/29/narrow-your-focus-to-prevent-overanalysis/",
+    "to": "/blog/narrow-your-focus-to-prevent-overanalysis",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/22/within-the-construction-industry-as-their-overdraft/",
+    "to": "/blog/within-the-construction-industry-as-their-overdraft",
+    "status": 301,
+    "type": "post"
+  },
+  {
+    "from": "/2021/01/22/strategic-and-commercial-approach-with-technical-understanding/",
+    "to": "/blog/strategic-and-commercial-approach-with-technical-understanding",
+    "status": 301,
+    "type": "post"
+  }
+]

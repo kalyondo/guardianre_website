@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all posts
+const allPosts = await getCollection('posts');
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+// Pagination
+const postsPerPage = 9;
+const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+const currentPage = 1;
+const posts = sortedPosts.slice(0, postsPerPage);
+
+// Get categories for filter
+const categories = [...new Set(sortedPosts.flatMap((post) => post.data.categories || []))];
+---
+
+<BaseLayout
+  title="News & Insights"
+  description="Stay informed with the latest news, insights, and updates from Guardian Reinsurance Brokers Zambia."
+>
+  <!-- Hero -->
+  <section class="hero py-16 md:py-24">
+    <div class="container text-center">
+      <h1 class="text-4xl md:text-5xl font-bold font-display mb-4">News & Insights</h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto">
+        Stay informed with our latest updates, industry insights, and expert commentary.
+      </p>
+    </div>
+  </section>
+
+  <!-- Categories Filter -->
+  {categories.length > 0 && (
+    <section class="sticky top-20 z-40 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 py-4 no-print">
+      <div class="container">
+        <div class="flex items-center overflow-x-auto gap-2 pb-2 -mb-2">
+          <a
+            href="/blog"
+            class="px-4 py-2 rounded-full text-sm font-medium bg-guardian-primary text-white whitespace-nowrap"
+          >
+            All Posts
+          </a>
+          {categories.map((category) => (
+            <a
+              href={`/category/${category}`}
+              class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors whitespace-nowrap capitalize"
+            >
+              {category.replace(/-/g, ' ')}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Posts Grid -->
+  <section class="section">
+    <div class="container">
+      {posts.length > 0 ? (
+        <>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post) => (
+              <PostCard
+                title={post.data.title}
+                slug={post.slug}
+                date={post.data.date}
+                excerpt={post.data.excerpt}
+                featuredImage={post.data.featuredImage}
+                featuredImageAlt={post.data.featuredImageAlt}
+                categories={post.data.categories}
+                readingTime={post.data.readingTime}
+              />
+            ))}
+          </div>
+
+          <!-- Pagination -->
+          {totalPages > 1 && (
+            <nav class="mt-16 flex justify-center" aria-label="Pagination">
+              <div class="flex items-center gap-2">
+                <span class="px-4 py-2 rounded-lg bg-guardian-primary text-white font-medium">1</span>
+                {Array.from({ length: totalPages - 1 }, (_, i) => i + 2).map((page) => (
+                  <a
+                    href={`/blog/page/${page}`}
+                    class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors"
+                  >
+                    {page}
+                  </a>
+                ))}
+              </div>
+            </nav>
+          )}
+        </>
+      ) : (
+        <div class="text-center py-16">
+          <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          </svg>
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">No posts yet</h2>
+          <p class="text-gray-600 dark:text-gray-400">Check back soon for updates.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,15 @@
+{
+  "name": "Guardian Reinsurance Brokers Zambia Limited",
+  "description": "",
+  "baseUrl": "https://guardianreinsurance.co.zm",
+  "homeUrl": "https://guardianreinsurance.co.zm",
+  "timezone": "UTC+0",
+  "dateFormat": "F j, Y",
+  "timeFormat": "g:i a",
+  "postsPerPage": 10,
+  "permalinkStructure": "/%year%/%monthnum%/%day%/%postname%/",
+  "charset": "UTF-8",
+  "language": "en_US",
+  "theme": "consulting",
+  "adminEmail": "geraldkalyondo@gmail.com"
+}

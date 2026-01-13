@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  const categories = [...new Set(posts.flatMap((post) => post.data.categories || []))];
+
+  return categories.map((category) => ({
+    params: { category },
+    props: {
+      category,
+      posts: posts.filter((post) => post.data.categories?.includes(category)),
+    },
+  }));
+}
+
+const { category, posts } = Astro.props;
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const categoryName = category.replace(/-/g, ' ');
+---
+
+<BaseLayout
+  title={`${categoryName} - Category`}
+  description={`Browse all posts in the ${categoryName} category.`}
+>
+  <!-- Hero -->
+  <section class="hero py-16">
+    <div class="container text-center">
+      <span class="badge-gold mb-4">Category</span>
+      <h1 class="text-4xl md:text-5xl font-bold font-display capitalize">{categoryName}</h1>
+      <p class="text-xl text-white/90 mt-4">{sortedPosts.length} article{sortedPosts.length !== 1 ? 's' : ''}</p>
+    </div>
+  </section>
+
+  <!-- Posts Grid -->
+  <section class="section">
+    <div class="container">
+      {sortedPosts.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedPosts.map((post) => (
+            <PostCard
+              title={post.data.title}
+              slug={post.slug}
+              date={post.data.date}
+              excerpt={post.data.excerpt}
+              featuredImage={post.data.featuredImage}
+              featuredImageAlt={post.data.featuredImageAlt}
+              categories={post.data.categories}
+              readingTime={post.data.readingTime}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <p class="text-gray-600 dark:text-gray-400">No posts found in this category.</p>
+          <a href="/blog" class="btn-primary mt-4">View All Posts</a>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

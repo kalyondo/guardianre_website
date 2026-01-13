@@ -1,0 +1,29 @@
+# Netlify redirects file
+# Redirect old WordPress date-based URLs to new structure
+
+# Post redirects (date-based to /blog/)
+/2024/*/*/* /blog/:splat 301
+/2023/*/*/* /blog/:splat 301
+/2022/*/*/* /blog/:splat 301
+/2021/*/*/* /blog/:splat 301
+/2020/*/*/* /blog/:splat 301
+
+# Category redirects
+/category/* /category/:splat 301
+
+# Tag redirects
+/tag/* /tag/:splat 301
+
+# Feed redirects
+/feed /rss.xml 301
+/feed/ /rss.xml 301
+/rss /rss.xml 301
+
+# Common WordPress paths
+/wp-admin https://guardianreinsurance.co.zm 301
+/wp-login.php https://guardianreinsurance.co.zm 301
+/wp-content/* /images/:splat 404
+/wp-includes/* / 404
+
+# SPA fallback for dynamic routes
+/* /404.html 404

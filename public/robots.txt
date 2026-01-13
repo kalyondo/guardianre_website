@@ -1,0 +1,11 @@
+# robots.txt for Guardian Reinsurance Brokers
+# https://guardian.loanegyzer.loans
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://guardian.loanegyzer.loans/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

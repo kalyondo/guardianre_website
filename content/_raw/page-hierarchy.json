@@ -1,0 +1,356 @@
+{
+  "1142": {
+    "slug": "about-layout-2",
+    "fullPath": "about-layout-2",
+    "parentId": 0,
+    "title": "About Layout 2"
+  },
+  "1147": {
+    "slug": "about-layout-3",
+    "fullPath": "about-layout-3",
+    "parentId": 0,
+    "title": "About Layout 3"
+  },
+  "6238": {
+    "slug": "about-layout-4",
+    "fullPath": "about-layout-4",
+    "parentId": 0,
+    "title": "About Layout 4"
+  },
+  "408": {
+    "slug": "careers",
+    "fullPath": "company-overview/careers",
+    "parentId": 7586,
+    "title": "Careers"
+  },
+  "7589": {
+    "slug": "cart-2",
+    "fullPath": "cart-2",
+    "parentId": 0,
+    "title": "Cart"
+  },
+  "7695": {
+    "slug": "cart",
+    "fullPath": "cart",
+    "parentId": 0,
+    "title": "Cart"
+  },
+  "6326": {
+    "slug": "cases-grid",
+    "fullPath": "cases-grid",
+    "parentId": 0,
+    "title": "Cases grid"
+  },
+  "6318": {
+    "slug": "cases-list",
+    "fullPath": "cases-list",
+    "parentId": 0,
+    "title": "Cases list"
+  },
+  "7590": {
+    "slug": "checkout-3",
+    "fullPath": "checkout-3",
+    "parentId": 0,
+    "title": "Checkout"
+  },
+  "7696": {
+    "slug": "checkout",
+    "fullPath": "checkout",
+    "parentId": 0,
+    "title": "Checkout"
+  },
+  "6212": {
+    "slug": "coming-soon",
+    "fullPath": "coming-soon",
+    "parentId": 0,
+    "title": "Coming Soon"
+  },
+  "377": {
+    "slug": "company-history",
+    "fullPath": "company-overview/company-history",
+    "parentId": 7586,
+    "title": "Company history"
+  },
+  "7586": {
+    "slug": "company-overview",
+    "fullPath": "company-overview",
+    "parentId": 0,
+    "title": "Company overview"
+  },
+  "1184": {
+    "slug": "contact-five",
+    "fullPath": "contact-five",
+    "parentId": 0,
+    "title": "Contact five"
+  },
+  "1182": {
+    "slug": "contact-four",
+    "fullPath": "contact-four",
+    "parentId": 0,
+    "title": "Contact four"
+  },
+  "1179": {
+    "slug": "contact-three",
+    "fullPath": "contact-three",
+    "parentId": 0,
+    "title": "Contact three"
+  },
+  "1171": {
+    "slug": "contact-two",
+    "fullPath": "contact-two",
+    "parentId": 0,
+    "title": "Contact two"
+  },
+  "7587": {
+    "slug": "contact",
+    "fullPath": "contact",
+    "parentId": 0,
+    "title": "Contact us"
+  },
+  "6333": {
+    "slug": "cost-calculator",
+    "fullPath": "cost-calculator",
+    "parentId": 0,
+    "title": "Cost Calculator"
+  },
+  "1113": {
+    "slug": "events-classic",
+    "fullPath": "events-classic",
+    "parentId": 0,
+    "title": "Events"
+  },
+  "1109": {
+    "slug": "events-grid",
+    "fullPath": "events-grid",
+    "parentId": 0,
+    "title": "Events Grid"
+  },
+  "1111": {
+    "slug": "events-modern",
+    "fullPath": "events-modern",
+    "parentId": 0,
+    "title": "Events Modern"
+  },
+  "6168": {
+    "slug": "faq",
+    "fullPath": "faq",
+    "parentId": 0,
+    "title": "FAQ"
+  },
+  "1024": {
+    "slug": "sample-page-2",
+    "fullPath": "sample-page-2",
+    "parentId": 0,
+    "title": "Home"
+  },
+  "979": {
+    "slug": "home-2",
+    "fullPath": "home-2",
+    "parentId": 0,
+    "title": "home 2"
+  },
+  "6180": {
+    "slug": "job-listing-grid",
+    "fullPath": "job-listing-grid",
+    "parentId": 0,
+    "title": "Job Listing Grid"
+  },
+  "1165": {
+    "slug": "make-an-appointment",
+    "fullPath": "make-an-appointment",
+    "parentId": 0,
+    "title": "Make an appointment"
+  },
+  "7697": {
+    "slug": "my-account",
+    "fullPath": "my-account",
+    "parentId": 0,
+    "title": "My account"
+  },
+  "7591": {
+    "slug": "my-account-2",
+    "fullPath": "my-account-2",
+    "parentId": 0,
+    "title": "My account"
+  },
+  "6351": {
+    "slug": "blog",
+    "fullPath": "blog",
+    "parentId": 0,
+    "title": "news"
+  },
+  "6297": {
+    "slug": "news-grid",
+    "fullPath": "news-grid",
+    "parentId": 0,
+    "title": "News grid"
+  },
+  "6285": {
+    "slug": "news-list",
+    "fullPath": "news-list",
+    "parentId": 0,
+    "title": "News list"
+  },
+  "390": {
+    "slug": "our-partners",
+    "fullPath": "company-overview/our-partners",
+    "parentId": 7586,
+    "title": "Our partners"
+  },
+  "6137": {
+    "slug": "partnerships",
+    "fullPath": "partnerships",
+    "parentId": 0,
+    "title": "Our Partnerships: Enhancing Client Success"
+  },
+  "558": {
+    "slug": "our-products",
+    "fullPath": "our-products",
+    "parentId": 0,
+    "title": "Our Products"
+  },
+  "344": {
+    "slug": "our-services",
+    "fullPath": "company-overview/our-services",
+    "parentId": 7586,
+    "title": "Our services"
+  },
+  "462": {
+    "slug": "our-team-grid",
+    "fullPath": "company-overview/our-team-grid",
+    "parentId": 7586,
+    "title": "Our team grid"
+  },
+  "440": {
+    "slug": "our-team-list",
+    "fullPath": "company-overview/our-team-list",
+    "parentId": 7586,
+    "title": "Our team list"
+  },
+  "6195": {
+    "slug": "our-team-list-2",
+    "fullPath": "our-team-list-2",
+    "parentId": 0,
+    "title": "Our team list 2"
+  },
+  "601": {
+    "slug": "our-work-grid",
+    "fullPath": "our-work-grid",
+    "parentId": 0,
+    "title": "our work grid"
+  },
+  "6306": {
+    "slug": "our-work-grid-2",
+    "fullPath": "our-work-grid-2",
+    "parentId": 0,
+    "title": "Our work grid"
+  },
+  "614": {
+    "slug": "our-work-with-filter",
+    "fullPath": "our-work-with-filter",
+    "parentId": 0,
+    "title": "Our work with filter"
+  },
+  "1130": {
+    "slug": "portfolio-grid",
+    "fullPath": "portfolio-grid",
+    "parentId": 0,
+    "title": "Portfolio"
+  },
+  "6273": {
+    "slug": "portfolio-2",
+    "fullPath": "portfolio-2",
+    "parentId": 0,
+    "title": "Portfolio"
+  },
+  "229": {
+    "slug": "portfolio-widget",
+    "fullPath": "portfolio-widget",
+    "parentId": 0,
+    "title": "Portfolio Widget"
+  },
+  "239": {
+    "slug": "posts-widget",
+    "fullPath": "posts-widget",
+    "parentId": 0,
+    "title": "Posts Widget"
+  },
+  "2": {
+    "slug": "sample-page",
+    "fullPath": "sample-page",
+    "parentId": 0,
+    "title": "Sample Page"
+  },
+  "6122": {
+    "slug": "service-layout-4",
+    "fullPath": "service-layout-4",
+    "parentId": 0,
+    "title": "Service Layout 4"
+  },
+  "6206": {
+    "slug": "services-grid-2",
+    "fullPath": "services-grid-2",
+    "parentId": 0,
+    "title": "Services Grid 2"
+  },
+  "6266": {
+    "slug": "services-grid-3",
+    "fullPath": "services-grid-3",
+    "parentId": 0,
+    "title": "Services Grid 3"
+  },
+  "6228": {
+    "slug": "services-list",
+    "fullPath": "services-list",
+    "parentId": 0,
+    "title": "Services List"
+  },
+  "7588": {
+    "slug": "shop-2",
+    "fullPath": "shop-2",
+    "parentId": 0,
+    "title": "Shop"
+  },
+  "7694": {
+    "slug": "shop",
+    "fullPath": "shop",
+    "parentId": 0,
+    "title": "Shop"
+  },
+  "324": {
+    "slug": "testimonials-page",
+    "fullPath": "testimonials-page",
+    "parentId": 0,
+    "title": "Testimonials 1"
+  },
+  "1282": {
+    "slug": "testimonials-2",
+    "fullPath": "testimonials-2",
+    "parentId": 0,
+    "title": "Testimonials 2"
+  },
+  "246": {
+    "slug": "timeline-widget",
+    "fullPath": "timeline-widget",
+    "parentId": 0,
+    "title": "Timeline Widget"
+  },
+  "7692": {
+    "slug": "typography",
+    "fullPath": "typography",
+    "parentId": 0,
+    "title": "Typography"
+  },
+  "6786": {
+    "slug": "webinars",
+    "fullPath": "webinars",
+    "parentId": 0,
+    "title": "Webinars"
+  },
+  "836": {
+    "slug": "checkout-2",
+    "fullPath": "checkout-2",
+    "parentId": 0,
+    "title": "сheckout"
+  }
+}

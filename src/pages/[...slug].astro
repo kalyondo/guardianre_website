@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((page) => ({
+    params: { slug: page.slug }, // Use Astro's generated slug from filename
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+
+// Determine page type for styling
+const isHomePage = page.slug === 'home' || page.slug === '';
+---
+
+<BaseLayout
+  title={page.data.title}
+  description={page.data.excerpt}
+  ogImage={page.data.featuredImage}
+>
+  <!-- Page Header -->
+  <section class="hero py-16 md:py-20">
+    <div class="container">
+      <h1 class="text-4xl md:text-5xl font-bold font-display text-center">{page.data.title}</h1>
+      {page.data.excerpt && (
+        <p class="text-xl text-white/90 text-center mt-4 max-w-3xl mx-auto">{page.data.excerpt}</p>
+      )}
+    </div>
+  </section>
+
+  <!-- Featured Image -->
+  {page.data.featuredImage && (
+    <div class="container max-w-5xl -mt-8 mb-8 relative z-10">
+      <img
+        src={page.data.featuredImage}
+        alt={page.data.featuredImageAlt || page.data.title}
+        class="w-full rounded-xl shadow-2xl"
+        loading="eager"
+        onerror="this.style.display='none';"
+      />
+    </div>
+  )}
+
+  <!-- Page Content -->
+  <section class="section py-12 md:py-16">
+    <div class="container max-w-4xl">
+      <div class="prose prose-lg dark:prose-dark max-w-none">
+        <Content />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
