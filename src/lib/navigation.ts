@@ -34,14 +34,14 @@ interface Menu {
 }
 
 // Default navigation if menu data is not available
+// Refined, sophisticated naming for premium reinsurance broker
 const defaultNavigation: MenuItem[] = [
-  { id: 1, title: 'Home', url: '/', order: 0, parentId: 0, description: "Zambia's first licensed reinsurance broker since 2006" },
-  { id: 2, title: 'About Us', url: '/company-overview', order: 1, parentId: 0, description: 'Our heritage, values, and market position' },
-  { id: 3, title: 'Partnerships', url: '/partnerships', order: 2, parentId: 0, description: 'Strategic alliances that enhance client value' },
-  { id: 4, title: 'Products', url: '/our-products', order: 3, parentId: 0, description: 'Treaty, facultative, and specialty reinsurance solutions' },
-  { id: 5, title: 'Services', url: '/our-services', order: 4, parentId: 0, description: 'Comprehensive broking and advisory services' },
-  { id: 6, title: 'News', url: '/blog', order: 5, parentId: 0, description: 'Industry insights and company updates' },
-  { id: 7, title: 'Contact', url: '/contact', order: 6, parentId: 0, description: 'Connect with our team in Lusaka' },
+  { id: 1, title: 'Our Heritage', url: '/company-overview', order: 1, parentId: 0, description: 'Legacy, values, and market leadership since 2006' },
+  { id: 2, title: 'Expertise', url: '/our-services', order: 2, parentId: 0, description: 'Comprehensive broking and advisory excellence' },
+  { id: 3, title: 'Solutions', url: '/our-products', order: 3, parentId: 0, description: 'Treaty, facultative, and specialty reinsurance' },
+  { id: 4, title: 'Alliances', url: '/partnerships', order: 4, parentId: 0, description: 'Strategic partnerships that amplify client value' },
+  { id: 5, title: 'Insights', url: '/blog', order: 5, parentId: 0, description: 'Industry perspectives and thought leadership' },
+  { id: 6, title: 'Connect', url: '/contact', order: 6, parentId: 0, description: 'Begin the conversation with our team' },
 ];
 
 function resolveUrl(item: RawMenuItem): string {
