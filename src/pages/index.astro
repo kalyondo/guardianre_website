@@ -44,91 +44,119 @@ const stats = [
 ---
 
 <BaseLayout title="Zambia's First Reinsurance Broker | Guardian Re">
-  <!-- Hero Section -->
-  <section class="relative min-h-[85vh] md:min-h-[90vh] flex items-center bg-gradient-to-br from-guardian-green via-guardian-green-dark to-guardian-black overflow-hidden px-4 md:px-0">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-10">
-      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-        {[...Array(8)].map((_, i) => (
-          <line
-            x1="50"
-            y1="0"
-            x2={50 + 60 * Math.cos((i * 45 - 90) * Math.PI / 180)}
-            y2={60 * Math.sin((i * 45 - 90) * Math.PI / 180) + 50}
-            stroke="currentColor"
-            stroke-width="0.5"
-            class="text-guardian-gold"
-          />
-        ))}
-      </svg>
+  <!-- Hero Section - Split Image Design -->
+  <section class="relative min-h-[90vh] lg:min-h-screen overflow-hidden">
+    <!-- Background split -->
+    <div class="absolute inset-0 flex">
+      <!-- Left side - Green gradient -->
+      <div class="w-full lg:w-1/2 bg-gradient-to-br from-guardian-green via-guardian-green-dark to-guardian-black"></div>
+      <!-- Right side - Image (hidden on mobile, visible on lg) -->
+      <div class="hidden lg:block w-1/2 relative">
+        <img
+          src="/images/hero-professional.jpg"
+          alt="African business professionals"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <!-- Overlay gradient for blend -->
+        <div class="absolute inset-0 bg-gradient-to-r from-guardian-green-dark via-guardian-green-dark/60 to-transparent"></div>
+        <!-- Gold accent line -->
+        <div class="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-guardian-gold to-transparent"></div>
+      </div>
+    </div>
+
+    <!-- Mobile background image -->
+    <div class="lg:hidden absolute inset-0">
+      <img
+        src="/images/hero-professional.jpg"
+        alt="African business professionals"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-guardian-green-dark/90 via-guardian-green-dark/80 to-guardian-black/90"></div>
     </div>
 
     <!-- Sun rays decorative element -->
-    <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] opacity-20">
+    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] opacity-10 pointer-events-none">
       <svg viewBox="0 0 200 200" class="w-full h-full">
-        {[...Array(16)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <line
             x1="100"
             y1="100"
-            x2={100 + 100 * Math.cos((i * 22.5) * Math.PI / 180)}
-            y2={100 + 100 * Math.sin((i * 22.5) * Math.PI / 180)}
+            x2={100 + 100 * Math.cos((i * 30) * Math.PI / 180)}
+            y2={100 + 100 * Math.sin((i * 30) * Math.PI / 180)}
             stroke="#CBA875"
-            stroke-width="2"
+            stroke-width="1.5"
           />
         ))}
-        <circle cx="100" cy="100" r="30" fill="#CBA875" opacity="0.3"/>
+        <circle cx="100" cy="100" r="25" fill="#CBA875" opacity="0.2"/>
       </svg>
     </div>
 
-    <div class="container relative z-10">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-white">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm mb-6 backdrop-blur-sm">
+    <!-- Content -->
+    <div class="relative z-10 min-h-[90vh] lg:min-h-screen flex items-center">
+      <div class="container px-4 md:px-6">
+        <div class="max-w-2xl py-20 lg:py-0">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm mb-6 backdrop-blur-sm border border-white/10">
             <span class="w-2 h-2 bg-guardian-gold rounded-full animate-pulse"></span>
-            Established 2006 | Licensed Reinsurance Broker
+            <span class="text-white/90">Established 2006 | Licensed Reinsurance Broker</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-4 md:mb-6">
-            Zambia's First<br/>
-            <span class="text-guardian-gold">Reinsurance Broker</span>
+          <!-- Heading -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold leading-[1.1] mb-6 text-white">
+            Zambia's First
+            <span class="block text-guardian-gold mt-2">Reinsurance Broker</span>
           </h1>
 
-          <p class="text-xl sm:text-xl md:text-2xl text-white/90 mb-3 md:mb-4 font-light leading-relaxed">
+          <!-- Subheading -->
+          <p class="text-xl sm:text-2xl text-white/90 mb-4 font-light leading-relaxed">
             Providing world-class and ethical reinsurance services to the African market for over 18 years.
           </p>
 
-          <p class="text-lg md:text-lg text-white/70 mb-6 md:mb-8 leading-relaxed max-w-xl">
+          <!-- Partner mention -->
+          <p class="text-lg text-white/70 mb-8 leading-relaxed">
             As proud partners of <a href="https://www.minerva.co.zw/" target="_blank" rel="noopener noreferrer" class="text-guardian-gold font-semibold hover:underline">Minerva Re</a>, we deliver innovative risk management solutions backed by global expertise and local understanding.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a href="/our-services" class="btn bg-guardian-gold text-guardian-black hover:bg-guardian-gold-light px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold rounded-xl flex items-center justify-center min-h-[52px]">
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/our-services" class="group bg-guardian-gold text-guardian-black hover:bg-guardian-gold-light px-8 py-4 text-lg font-semibold rounded-xl inline-flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-guardian-gold/30 min-h-[56px]">
               Our Services
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-            <a href="/contact" class="btn bg-white/10 text-white border border-white/30 hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 text-base sm:text-lg rounded-xl flex items-center justify-center min-h-[52px]">
+            <a href="/contact" class="bg-white/10 text-white border border-white/30 hover:bg-white/20 backdrop-blur-sm px-8 py-4 text-lg font-medium rounded-xl inline-flex items-center justify-center transition-all duration-300 min-h-[56px]">
               Get a Quote
             </a>
           </div>
-        </div>
 
-        <div class="hidden lg:flex justify-center">
-          <!-- Official Logo with white background for visibility -->
-          <div class="bg-white rounded-3xl p-8 shadow-2xl">
-            <img
-              src="/images/guardian-logo.jpg"
-              alt="Guardian Reinsurance Brokers - In Association with Minerva Re"
-              class="h-64 w-auto object-contain"
-            />
+          <!-- Trust indicators -->
+          <div class="flex items-center gap-6 mt-10 pt-8 border-t border-white/10">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-guardian-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white/80 text-sm">PIA Licensed</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-guardian-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white/80 text-sm">Minerva Re Partner</span>
+            </div>
+            <div class="hidden sm:flex items-center gap-2">
+              <svg class="w-5 h-5 text-guardian-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white/80 text-sm">$700M+ Protected</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
       <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
       </svg>
