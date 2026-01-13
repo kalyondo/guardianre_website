@@ -19,7 +19,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       pubDate: new Date(post.data.date),
       description: post.data.excerpt || '',
-      link: `/blog/${post.slug}/`,
+      link: `/insights/${post.slug}/`,
       categories: post.data.categories || [],
     })),
     customData: `<language>en-zm</language>`,

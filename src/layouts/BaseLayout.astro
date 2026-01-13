@@ -69,11 +69,14 @@ const currentUrl = canonicalUrl || Astro.url.pathname;
     )}
 
     <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Theme color -->
-    <meta name="theme-color" content="#1e3a5f" />
+    <meta name="theme-color" content="#1B5E4B" />
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -1,12 +1,16 @@
 # Netlify redirects file
 # Redirect old WordPress date-based URLs to new structure
 
-# Post redirects (date-based to /blog/)
-/2024/*/*/* /blog/:splat 301
-/2023/*/*/* /blog/:splat 301
-/2022/*/*/* /blog/:splat 301
-/2021/*/*/* /blog/:splat 301
-/2020/*/*/* /blog/:splat 301
+# Redirect old /blog to /insights
+/blog/* /insights/:splat 301
+/blog /insights 301
+
+# Post redirects (date-based to /insights/)
+/2024/*/*/* /insights/:splat 301
+/2023/*/*/* /insights/:splat 301
+/2022/*/*/* /insights/:splat 301
+/2021/*/*/* /insights/:splat 301
+/2020/*/*/* /insights/:splat 301
 
 # Category redirects
 /category/* /category/:splat 301
