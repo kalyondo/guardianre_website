@@ -36,12 +36,12 @@ interface Menu {
 // Default navigation if menu data is not available
 // Refined, sophisticated naming for premium reinsurance broker
 const defaultNavigation: MenuItem[] = [
-  { id: 1, title: 'Our Heritage', url: '/company-overview', order: 1, parentId: 0, description: 'Legacy, values, and market leadership since 2006' },
-  { id: 2, title: 'Expertise', url: '/our-services', order: 2, parentId: 0, description: 'Comprehensive broking and advisory excellence' },
-  { id: 3, title: 'Solutions', url: '/our-products', order: 3, parentId: 0, description: 'Treaty, facultative, and specialty reinsurance' },
-  { id: 4, title: 'Alliances', url: '/partnerships', order: 4, parentId: 0, description: 'Strategic partnerships that amplify client value' },
+  { id: 1, title: 'Our Heritage', url: '/our-heritage', order: 1, parentId: 0, description: 'Legacy, values, and market leadership since 2006' },
+  { id: 2, title: 'Expertise', url: '/expertise', order: 2, parentId: 0, description: 'Comprehensive broking and advisory excellence' },
+  { id: 3, title: 'Solutions', url: '/solutions', order: 3, parentId: 0, description: 'Treaty, facultative, and specialty reinsurance' },
+  { id: 4, title: 'Alliances', url: '/alliances', order: 4, parentId: 0, description: 'Strategic partnerships that amplify client value' },
   { id: 5, title: 'Insights', url: '/blog', order: 5, parentId: 0, description: 'Industry perspectives and thought leadership' },
-  { id: 6, title: 'Connect', url: '/contact', order: 6, parentId: 0, description: 'Begin the conversation with our team' },
+  { id: 6, title: 'Connect', url: '/connect', order: 6, parentId: 0, description: 'Begin the conversation with our team' },
 ];
 
 function resolveUrl(item: RawMenuItem): string {
