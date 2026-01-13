@@ -404,6 +404,17 @@
   animation: subtleRotate 120s linear infinite;
 }
 
+/* Page header sun rays - simple rotation for corner-positioned elements */
+@keyframes simpleRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.page-sun-rays {
+  animation: simpleRotate 90s linear infinite;
+  transform-origin: center center;
+}
+
 /* Gold accent line draw */
 .hero-gold-line {
   transform-origin: center;
@@ -468,7 +479,8 @@
   .hero-gold-shimmer,
   .hero-sun-rays,
   .hero-gold-line,
-  .hero-float {
+  .hero-float,
+  .page-sun-rays {
     animation: none;
     opacity: 1;
     transform: none;
