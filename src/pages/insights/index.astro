@@ -33,49 +33,35 @@ const formatDate = (date: string) => new Date(date).toLocaleDateString('en-US', 
   title="News & Insights"
   description="Stay informed with the latest news, insights, and updates from Guardian Reinsurance Brokers Zambia."
 >
-  <!-- Hero Section - Editorial Style -->
-  <section class="relative min-h-[50vh] md:min-h-[60vh] overflow-hidden bg-gradient-to-br from-guardian-green via-guardian-green-dark to-guardian-black">
-    <!-- Animated geometric pattern background -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-0 left-0 w-full h-full">
-        {[...Array(6)].map((_, i) => (
-          <div
-            class="absolute border border-guardian-gold/30 rounded-full animate-pulse-slow"
-            style={`
-              width: ${150 + i * 100}px;
-              height: ${150 + i * 100}px;
-              top: 50%;
-              left: 30%;
-              transform: translate(-50%, -50%);
-              animation-delay: ${i * 0.2}s;
-            `}
-          />
-        ))}
-      </div>
-    </div>
-
-    <!-- Diagonal gold accent line -->
-    <div class="hero-diagonal-line absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-guardian-gold to-transparent opacity-40"></div>
-
-    <!-- Sun rays decorative element -->
-    <div class="absolute top-1/2 right-10 w-[300px] h-[300px] opacity-5 pointer-events-none hidden lg:block" style="transform: translateY(-50%);">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-guardian-green via-guardian-green-dark to-guardian-black py-24 md:py-32 min-h-[450px] md:min-h-[500px] overflow-hidden">
+    <!-- Animated decorative sun rays -->
+    <div class="absolute top-[60%] right-0 -translate-y-1/2 w-[500px] h-[500px] opacity-10">
       <svg viewBox="0 0 200 200" class="w-full h-full animate-spin-very-slow">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(16)].map((_, i) => (
           <line
             x1="100"
             y1="100"
-            x2={100 + 100 * Math.cos((i * 30) * Math.PI / 180)}
-            y2={100 + 100 * Math.sin((i * 30) * Math.PI / 180)}
+            x2={100 + 100 * Math.cos((i * 22.5) * Math.PI / 180)}
+            y2={100 + 100 * Math.sin((i * 22.5) * Math.PI / 180)}
             stroke="#CBA875"
-            stroke-width="1.5"
+            stroke-width="2"
           />
         ))}
-        <circle cx="100" cy="100" r="20" fill="#CBA875" opacity="0.3"/>
+        <circle cx="100" cy="100" r="30" fill="#CBA875" opacity="0.3"/>
       </svg>
     </div>
 
-    <!-- Content -->
-    <div class="relative z-10 container px-4 md:px-6 py-20 md:py-28">
+    <!-- Floating dots decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-[10%] w-2 h-2 bg-guardian-gold/30 rounded-full animate-float"></div>
+      <div class="absolute top-40 left-[20%] w-3 h-3 bg-guardian-gold/20 rounded-full animate-float" style="animation-delay: 1s;"></div>
+      <div class="absolute bottom-32 left-[15%] w-2 h-2 bg-guardian-gold/25 rounded-full animate-float" style="animation-delay: 2s;"></div>
+      <div class="absolute top-32 right-[25%] w-2 h-2 bg-guardian-gold/30 rounded-full animate-float" style="animation-delay: 0.5s;"></div>
+      <div class="absolute bottom-40 right-[10%] w-3 h-3 bg-guardian-gold/20 rounded-full animate-float" style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <div class="container relative z-10">
       <div class="max-w-3xl">
         <!-- Animated badge -->
         <div class="hero-badge inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm mb-6 backdrop-blur-sm border border-white/10">

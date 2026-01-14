@@ -16,14 +16,22 @@ const values = [
   { letter: 'I', name: 'Innovativeness', description: 'We apply creative thinking to develop effective risk transfer solutions.' },
   { letter: 'T', name: 'Teamwork', description: 'We collaborate with clients and partners to achieve shared objectives.' },
 ];
+
+// Timeline milestones
+const milestones = [
+  { year: '2006', title: 'Founded', description: 'Guardian Re established as Zambia\'s first dedicated reinsurance broker' },
+  { year: '2006', title: 'Licensed', description: 'Received official license from the Pensions and Insurance Authority' },
+  { year: '2010', title: 'Expansion', description: 'Extended services to cover the broader African market' },
+  { year: '2024', title: 'Milestone', description: 'Protected over $700 million in assets through reinsurance solutions' },
+];
 ---
 
 <BaseLayout title="About Us | Guardian Reinsurance Brokers">
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-guardian-green via-guardian-green-dark to-guardian-black py-16 md:py-28 overflow-hidden px-4 md:px-0">
-    <!-- Decorative sun rays -->
-    <div class="absolute top-0 right-0 w-96 h-96 opacity-10">
-      <svg viewBox="0 0 200 200" class="w-full h-full page-sun-rays">
+  <section class="relative bg-gradient-to-br from-guardian-green via-guardian-green-dark to-guardian-black py-24 md:py-32 min-h-[450px] md:min-h-[500px] overflow-hidden">
+    <!-- Animated decorative sun rays -->
+    <div class="absolute top-[60%] right-0 -translate-y-1/2 w-[500px] h-[500px] opacity-10">
+      <svg viewBox="0 0 200 200" class="w-full h-full animate-spin-very-slow">
         {[...Array(16)].map((_, i) => (
           <line
             x1="100"
@@ -38,34 +46,50 @@ const values = [
       </svg>
     </div>
 
+    <!-- Floating dots decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-[10%] w-2 h-2 bg-guardian-gold/30 rounded-full animate-float"></div>
+      <div class="absolute top-40 left-[20%] w-3 h-3 bg-guardian-gold/20 rounded-full animate-float" style="animation-delay: 1s;"></div>
+      <div class="absolute bottom-32 left-[15%] w-2 h-2 bg-guardian-gold/25 rounded-full animate-float" style="animation-delay: 2s;"></div>
+      <div class="absolute top-32 right-[25%] w-2 h-2 bg-guardian-gold/30 rounded-full animate-float" style="animation-delay: 0.5s;"></div>
+      <div class="absolute bottom-40 right-[10%] w-3 h-3 bg-guardian-gold/20 rounded-full animate-float" style="animation-delay: 1.5s;"></div>
+    </div>
+
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <div class="hero-animate-badge inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-base text-white mb-6 backdrop-blur-sm">
+        <div class="hero-badge inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 rounded-full text-sm text-white mb-8 backdrop-blur-sm border border-white/10">
           <span class="w-2 h-2 bg-guardian-gold rounded-full animate-pulse"></span>
           Licensed by PIA Since 2006
         </div>
 
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
-          <span class="hero-animate-heading-1 block">About</span>
-          <span class="hero-gold-shimmer block">Guardian Re</span>
+        <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-8">
+          <span class="block">About</span>
+          <span class="hero-gold-shimmer block mt-2">Guardian Re</span>
         </h1>
 
-        <p class="hero-animate-subheading text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
+        <p class="hero-subtitle text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl mx-auto">
           Zambia's first and only dedicated reinsurance broking firm, building trust and delivering excellence across the African market.
         </p>
       </div>
     </div>
+
   </section>
 
-  <!-- Corporate Identity Card -->
-  <section class="relative -mt-8 z-20 px-4">
+  <!-- Corporate Identity Card - Floating -->
+  <section class="relative -mt-16 z-20 px-4">
     <div class="container">
-      <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-6 md:p-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {corporateIdentity.map((item) => (
-            <div class="text-center md:text-left">
-              <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">{item.label}</p>
-              <p class="text-base md:text-base font-semibold text-gray-900">{item.value}</p>
+      <div class="identity-card max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100 overflow-hidden relative">
+        <!-- Top gradient line -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-guardian-green via-guardian-gold to-guardian-green"></div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {corporateIdentity.map((item, index) => (
+            <div
+              class="identity-item text-center md:text-left group"
+              style={`animation-delay: ${index * 0.1}s`}
+            >
+              <p class="text-xs font-semibold text-guardian-gold uppercase tracking-wider mb-2">{item.label}</p>
+              <p class="text-base md:text-lg font-bold text-gray-900 group-hover:text-guardian-green transition-colors">{item.value}</p>
             </div>
           ))}
         </div>
@@ -74,13 +98,14 @@ const values = [
   </section>
 
   <!-- Heritage & Story Section -->
-  <section class="section bg-white px-4 md:px-0">
+  <section class="section bg-white px-4 md:px-0 overflow-hidden">
     <div class="container">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="inline-block px-4 py-1.5 bg-guardian-green/10 text-guardian-green text-base font-semibold rounded-full mb-4">Our Heritage</span>
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-            Zambia's Pioneer in<br/>Reinsurance Broking
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="heritage-content">
+          <span class="inline-block px-4 py-2 bg-guardian-green/10 text-guardian-green text-sm font-semibold rounded-full mb-6">Our Heritage</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+            Zambia's Pioneer in<br/>
+            <span class="section-gold-text">Reinsurance Broking</span>
           </h2>
           <p class="text-lg text-gray-600 mb-6 leading-relaxed">
             Founded in January 2006 and licensed by the Pensions and Insurance Authority in September of that year, Guardian Reinsurance Brokers (Z) Limited became Zambia's first dedicated reinsurance broking firm.
@@ -93,98 +118,150 @@ const values = [
           </p>
         </div>
 
-        <div class="relative">
-          <div class="rounded-2xl overflow-hidden shadow-xl">
+        <div class="heritage-image relative">
+          <div class="rounded-3xl overflow-hidden shadow-2xl relative group">
             <img
               src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop"
               alt="Zambian business professionals collaborating"
-              class="w-full h-auto"
+              class="w-full h-auto transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
+            <!-- Overlay gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-guardian-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
+
           <!-- Decorative elements -->
-          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-guardian-gold/20 rounded-2xl -z-10"></div>
-          <div class="absolute -top-6 -right-6 w-24 h-24 border-2 border-guardian-gold/40 rounded-2xl -z-10"></div>
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-guardian-gold/20 rounded-3xl -z-10"></div>
+          <div class="absolute -top-6 -right-6 w-24 h-24 border-2 border-guardian-gold/40 rounded-3xl -z-10"></div>
+
+          <!-- Floating experience badge -->
+          <div class="absolute -bottom-4 right-8 bg-white rounded-2xl px-6 py-4 shadow-xl hidden sm:block">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-guardian-green to-guardian-green-dark rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-2xl font-serif font-bold text-gray-900">18+</div>
+                <div class="text-sm text-gray-500">Years of Excellence</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Mission & Vision Section -->
-  <section class="section bg-gray-50 px-4 md:px-0">
+  <section class="section bg-gray-50 px-4 md:px-0 overflow-hidden">
     <div class="container">
-      <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-guardian-green/10 text-guardian-green text-base font-semibold rounded-full mb-4">Our Purpose</span>
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900">
-          Mission & Vision
+      <div class="section-header text-center mb-14">
+        <span class="inline-block px-4 py-2 bg-guardian-green/10 text-guardian-green text-sm font-semibold rounded-full mb-4">Our Purpose</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+          Mission & <span class="section-gold-text">Vision</span>
         </h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-guardian-green to-guardian-gold mx-auto rounded-full"></div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Mission -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border-t-4 border-guardian-green">
-          <div class="w-14 h-14 bg-guardian-green/10 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-guardian-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
+        <div class="mission-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+          <!-- Decorative corner -->
+          <div class="absolute top-0 right-0 w-24 h-24 bg-guardian-green/5 rounded-bl-[100px]"></div>
+
+          <div class="relative">
+            <div class="w-16 h-16 bg-gradient-to-br from-guardian-green to-guardian-green-dark rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Our Mission</h3>
+            <blockquote class="relative">
+              <svg class="absolute -top-2 -left-2 w-8 h-8 text-guardian-gold/30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-lg text-gray-600 italic leading-relaxed pl-6">
+                "To provide world-class and ethical reinsurance services to the African market."
+              </p>
+            </blockquote>
+            <p class="text-gray-500 mt-6 text-sm leading-relaxed">
+              We are committed to delivering reinsurance solutions that are technically sound, commercially viable, and aligned with the long-term interests of our clients.
+            </p>
           </div>
-          <h3 class="text-xl font-serif font-bold text-gray-900 mb-4">Our Mission</h3>
-          <p class="text-lg text-gray-600 italic leading-relaxed">
-            "To provide world-class and ethical reinsurance services to the African market."
-          </p>
-          <p class="text-gray-500 mt-4 text-base leading-relaxed">
-            We are committed to delivering reinsurance solutions that are technically sound, commercially viable, and aligned with the long-term interests of our clients.
-          </p>
+
+          <!-- Bottom accent -->
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-guardian-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
         </div>
 
         <!-- Vision -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border-t-4 border-guardian-gold">
-          <div class="w-14 h-14 bg-guardian-gold/10 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-guardian-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-            </svg>
+        <div class="vision-card group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+          <!-- Decorative corner -->
+          <div class="absolute top-0 right-0 w-24 h-24 bg-guardian-gold/5 rounded-bl-[100px]"></div>
+
+          <div class="relative">
+            <div class="w-16 h-16 bg-gradient-to-br from-guardian-gold to-guardian-gold-light rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-8 h-8 text-guardian-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Our Vision</h3>
+            <blockquote class="relative">
+              <svg class="absolute -top-2 -left-2 w-8 h-8 text-guardian-gold/30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-lg text-gray-600 italic leading-relaxed pl-6">
+                "Provision of leading and dependable reinsurance broking and risk management innovations."
+              </p>
+            </blockquote>
+            <p class="text-gray-500 mt-6 text-sm leading-relaxed">
+              We aspire to be recognised as the partner of choice for insurers seeking reliable, innovative, and professionally managed reinsurance programmes.
+            </p>
           </div>
-          <h3 class="text-xl font-serif font-bold text-gray-900 mb-4">Our Vision</h3>
-          <p class="text-lg text-gray-600 italic leading-relaxed">
-            "Provision of leading and dependable reinsurance broking and risk management innovations."
-          </p>
-          <p class="text-gray-500 mt-4 text-base leading-relaxed">
-            We aspire to be recognised as the partner of choice for insurers seeking reliable, innovative, and professionally managed reinsurance programmes.
-          </p>
+
+          <!-- Bottom accent -->
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-guardian-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Core Values (ERIT) Section -->
-  <section class="section bg-white px-4 md:px-0">
+  <section class="section bg-white px-4 md:px-0 overflow-hidden">
     <div class="container">
-      <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-guardian-gold/10 text-guardian-gold text-base font-semibold rounded-full mb-4">Core Values</span>
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
-          The ERIT Principles
+      <div class="section-header text-center mb-14">
+        <span class="inline-block px-4 py-2 bg-guardian-gold/10 text-guardian-gold text-sm font-semibold rounded-full mb-4">Core Values</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+          The ERIT <span class="section-gold-text">Principles</span>
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
           Our values guide every aspect of our operations and every relationship we build.
         </p>
+        <div class="w-20 h-1 bg-gradient-to-r from-guardian-green to-guardian-gold mx-auto rounded-full mt-6"></div>
       </div>
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        {values.map((value) => (
-          <div class="group relative bg-gradient-to-br from-guardian-green to-guardian-green-dark rounded-2xl p-5 sm:p-8 text-white overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        {values.map((value, index) => (
+          <div
+            class="value-card group relative bg-gradient-to-br from-guardian-green to-guardian-green-dark rounded-2xl sm:rounded-3xl p-5 sm:p-8 text-white overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            style={`animation-delay: ${index * 0.1}s`}
+          >
             <!-- Large letter background -->
-            <div class="absolute -top-4 -right-4 text-[80px] sm:text-[120px] font-serif font-bold text-white/10 leading-none select-none">
+            <div class="absolute -top-4 -right-4 text-[80px] sm:text-[120px] font-serif font-bold text-white/10 leading-none select-none transition-transform duration-700 group-hover:scale-110">
               {value.letter}
             </div>
 
             <div class="relative z-10">
-              <div class="w-10 sm:w-12 h-10 sm:h-12 bg-guardian-gold rounded-xl flex items-center justify-center mb-4 text-guardian-black font-serif font-bold text-lg sm:text-xl">
+              <div class="w-12 h-12 sm:w-14 sm:h-14 bg-guardian-gold rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 text-guardian-black font-serif font-bold text-xl sm:text-2xl shadow-lg group-hover:scale-110 transition-transform duration-500">
                 {value.letter}
               </div>
-              <h3 class="text-lg sm:text-xl font-serif font-bold mb-2">{value.name}</h3>
+              <h3 class="text-lg sm:text-xl font-serif font-bold mb-2 sm:mb-3">{value.name}</h3>
               <p class="text-white/80 text-sm leading-relaxed">{value.description}</p>
             </div>
+
+            <!-- Bottom gold accent on hover -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-guardian-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
           </div>
         ))}
       </div>
@@ -192,36 +269,45 @@ const values = [
   </section>
 
   <!-- Market Position Section -->
-  <section class="section bg-guardian-cream px-4 md:px-0">
-    <div class="container">
+  <section class="section bg-gray-50 px-4 md:px-0 overflow-hidden relative">
+    <!-- Subtle pattern -->
+    <div class="absolute inset-0 opacity-[0.02]">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #1B5E4B 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+
+    <div class="container relative">
       <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-10">
-          <span class="inline-block px-4 py-1.5 bg-guardian-green/10 text-guardian-green text-base font-semibold rounded-full mb-4">Our Position</span>
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-            Market Leadership
+        <div class="section-header text-center mb-12">
+          <span class="inline-block px-4 py-2 bg-guardian-green/10 text-guardian-green text-sm font-semibold rounded-full mb-4">Our Position</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+            Market <span class="section-gold-text">Leadership</span>
           </h2>
+          <div class="w-20 h-1 bg-gradient-to-r from-guardian-green to-guardian-gold mx-auto rounded-full"></div>
         </div>
 
-        <div class="prose prose-lg max-w-none text-gray-600 text-center mb-10">
-          <p class="leading-relaxed text-base sm:text-lg">
+        <div class="market-content prose prose-lg max-w-none text-gray-600 text-center mb-12">
+          <p class="text-lg leading-relaxed">
             Guardian Re occupies a unique position in the Zambian market as the country's pioneering reinsurance broker. Our role extends beyond transactional placement to encompass advisory services, technical support, and strategic risk management guidance.
           </p>
-          <p class="leading-relaxed text-base sm:text-lg">
+          <p class="text-lg leading-relaxed">
             We serve insurance companies across multiple lines of business, including general insurance, life and health, and specialist risks. Our client relationships are built on trust, transparency, and a shared commitment to professional excellence.
           </p>
         </div>
 
         <!-- Highlight Panel -->
-        <div class="bg-white rounded-2xl p-6 sm:p-8 border-l-4 border-guardian-gold shadow-md">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-guardian-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-guardian-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="differentiator-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
+          <!-- Top accent line -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-guardian-green via-guardian-gold to-guardian-green"></div>
+
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-guardian-gold/20 to-guardian-gold/5 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-8 h-8 text-guardian-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Our Differentiator</h3>
-              <p class="text-base text-gray-600 leading-relaxed">
+              <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Our Differentiator</h3>
+              <p class="text-gray-600 leading-relaxed">
                 We have evolved from traditional placement services to offer fully integrated reinsurance advisory and broking solutions — combining technical expertise with a client-centric approach that prioritises understanding each client's unique business objectives.
               </p>
             </div>
@@ -232,45 +318,83 @@ const values = [
   </section>
 
   <!-- Regulatory Compliance Section -->
-  <section class="section bg-guardian-green text-white px-4 md:px-0">
-    <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <div class="w-16 h-16 mx-auto mb-6 bg-white/10 rounded-2xl flex items-center justify-center">
-          <svg class="w-8 h-8 text-guardian-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <section class="section bg-guardian-green text-white px-4 md:px-0 overflow-hidden relative">
+    <!-- Geometric pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {[...Array(10)].map((_, i) => (
+          <circle
+            cx={10 + i * 10}
+            cy={50}
+            r="15"
+            fill="none"
+            stroke="#CBA875"
+            stroke-width="0.5"
+          />
+        ))}
+      </svg>
+    </div>
+
+    <div class="container relative">
+      <div class="compliance-content max-w-3xl mx-auto text-center">
+        <div class="w-20 h-20 mx-auto mb-8 bg-white/10 rounded-3xl flex items-center justify-center backdrop-blur-sm">
+          <svg class="w-10 h-10 text-guardian-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
           </svg>
         </div>
-        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-6">
-          Regulatory Compliance
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-6">
+          Regulatory <span class="text-guardian-gold">Compliance</span>
         </h2>
-        <p class="text-lg text-white/90 leading-relaxed mb-4">
+        <p class="text-lg text-white/90 leading-relaxed mb-6">
           Guardian Re operates in full compliance with all applicable regulations issued by the <span class="text-guardian-gold font-semibold">Pensions and Insurance Authority (PIA)</span>.
         </p>
         <p class="text-base text-white/80 leading-relaxed">
           We maintain robust governance structures, adhere to prescribed conduct standards, and submit to regular regulatory oversight. Our commitment to compliance reflects our broader responsibility to uphold the integrity of the Zambian insurance sector.
         </p>
+
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+          <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+            <svg class="w-5 h-5 text-guardian-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm font-medium">Fully Licensed</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+            <svg class="w-5 h-5 text-guardian-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm font-medium">PIA Regulated</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+            <svg class="w-5 h-5 text-guardian-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm font-medium">Ethical Standards</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact CTA Section -->
-  <section class="section bg-gray-50 px-4 md:px-0">
+  <section class="section bg-white px-4 md:px-0 overflow-hidden">
     <div class="container">
-      <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-4">
-          Learn More About Guardian Re
+      <div class="cta-content max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
+          Learn More About <span class="section-gold-text">Guardian Re</span>
         </h2>
-        <p class="text-base text-gray-600 mb-8">
+        <p class="text-lg text-gray-600 mb-10">
           We welcome enquiries from insurers, reinsurers, and other stakeholders interested in learning more about our services.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/connect" class="btn bg-guardian-green text-white hover:bg-guardian-green-dark px-8 py-4 text-base sm:text-lg font-semibold rounded-xl min-h-[52px] flex items-center justify-center">
+          <a href="/connect" class="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-guardian-green text-white hover:bg-guardian-green-dark rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-guardian-green/20 hover:-translate-y-0.5">
             Contact Us
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
           </a>
-          <a href="/expertise" class="btn bg-white text-guardian-green border-2 border-guardian-green hover:bg-guardian-green/5 px-8 py-4 text-base sm:text-lg font-semibold rounded-xl min-h-[52px] flex items-center justify-center">
+          <a href="/expertise" class="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-guardian-green border-2 border-guardian-green hover:bg-guardian-green/5 rounded-xl font-semibold text-lg transition-all duration-300">
             Our Services
           </a>
         </div>
@@ -278,3 +402,212 @@ const values = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* ===== ANIMATIONS ===== */
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes gold-shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  @keyframes spin-very-slow {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  .animate-spin-very-slow {
+    animation: spin-very-slow 60s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  /* Hero animations */
+  .hero-badge {
+    animation: fade-in-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .hero-title {
+    animation: fade-in-up 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      #CBA875 0%,
+      #E8D5B5 25%,
+      #CBA875 50%,
+      #E8D5B5 75%,
+      #CBA875 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fade-in-up 0.8s ease-out 0.3s forwards, gold-shimmer 4s linear 1s infinite;
+    opacity: 0;
+  }
+
+  .hero-subtitle {
+    animation: fade-in-up 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  /* Section animations */
+  .section-header {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .section-gold-text {
+    background: linear-gradient(
+      90deg,
+      #CBA875 0%,
+      #E8D5B5 25%,
+      #CBA875 50%,
+      #E8D5B5 75%,
+      #CBA875 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gold-shimmer 4s linear infinite;
+    display: inline-block;
+    line-height: 1.15;
+    padding-bottom: 0.1em;
+  }
+
+  .identity-card {
+    animation: scale-in 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .identity-item {
+    animation: fade-in-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .heritage-content {
+    animation: slide-in-left 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .heritage-image {
+    animation: slide-in-right 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .mission-card {
+    animation: slide-in-left 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .vision-card {
+    animation: slide-in-right 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .value-card {
+    animation: fade-in-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .market-content {
+    animation: fade-in-up 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .differentiator-card {
+    animation: scale-in 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .compliance-content {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .cta-content {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Section padding */
+  .section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 640px) {
+    .section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+</style>
